@@ -41,6 +41,7 @@ terminal = guess_terminal()
 keys = [
     Key([mod], "r", lazy.spawn("rofi -show drun"), desc="Open rofi drun"),
     Key([mod], "b", lazy.spawn("brave"), desc="launch browser"),
+    Key([mod], "o", lazy.spawn("obsidian"), desc="launch Obsidian"),
 
     # A list of available commands that can be bound to keys can be found
     # at https://docs.qtile.org/en/latest/manual/config/lazy.html
