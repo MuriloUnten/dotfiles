@@ -43,6 +43,12 @@ keys = [
     Key([mod], "b", lazy.spawn("brave"), desc="launch browser"),
     Key([mod], "o", lazy.spawn("obsidian"), desc="launch Obsidian"),
 
+    Key([], "XF86MonBrightnessDown", lazy.spawn("brillo -q -U 5"), desc="decrease screeen brightness"),
+    Key([], "XF86MonBrightnessUp", lazy.spawn("brillo -q -A 5"), desc="increase screeen brightness"),
+    Key([], "XF86AudioMute", lazy.spawn("pulsemixer --toggle-mute"), desc="toggle mute"),
+    Key([], "XF86AudioLowerVolume", lazy.spawn("pulsemixer --change-volume -5"), desc="Lower volume"),
+    Key([], "XF86AudioRaiseVolume", lazy.spawn("pulsemixer --change-volume +5"), desc="Raise volume"),
+
     # A list of available commands that can be bound to keys can be found
     # at https://docs.qtile.org/en/latest/manual/config/lazy.html
     # Switch between windows
@@ -59,10 +65,8 @@ keys = [
     Key([mod, "shift"], "k", lazy.layout.shuffle_up(), desc="Move window up"),
     # Grow windows. If current window is on the edge of screen and direction
     # will be to screen edge - window would shrink.
-    Key([mod, "control"], "h", lazy.layout.grow_left(), desc="Grow window to the left"),
-    Key([mod, "control"], "l", lazy.layout.grow_right(), desc="Grow window to the right"),
-    Key([mod, "control"], "j", lazy.layout.grow(), desc="Grow window down"),
-    Key([mod, "control"], "k", lazy.layout.shrink(), desc="Grow window up"),
+    Key([mod, "control"], "j", lazy.layout.shrink(), desc="Shrink window"),
+    Key([mod, "control"], "k", lazy.layout.grow(), desc="Grow window"),
     Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
     # Toggle between split and unsplit sides of stack.
     # Split = all windows displayed
