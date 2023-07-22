@@ -8,6 +8,7 @@ fi
 alias vim="nvim"
 alias v="nvim"
 alias ls="exa -a"
+alias gs="git status"
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
