@@ -380,6 +380,17 @@ screens = [
             opacity=1.0
         )
     ),
+    Screen(
+        top=bar.Bar(
+            widgets=init_widgets_list(),
+            size=22,
+            # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
+            # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
+            background="#282828e5",
+            margin=[7, 11, -4, 11],
+            opacity=1.0
+        )
+    ),
 ]
 
 # Drag floating layouts.
