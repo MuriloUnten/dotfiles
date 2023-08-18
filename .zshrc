@@ -10,6 +10,7 @@ alias v="nvim"
 alias ls="exa -a"
 alias gs="git status"
 alias monitoron="xrandr --output HDMI-1 --mode 1920x1080 --rate 120 --right-of eDP-1"
+alias zathura="devour zathura"
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
