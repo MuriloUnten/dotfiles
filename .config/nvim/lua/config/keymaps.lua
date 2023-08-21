@@ -5,7 +5,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 
-keymap("n", "<leader>s", ":w<cr>", opts) -- save file
+keymap("n", "<leader>w", ":w<cr>", opts) -- save file
 keymap("n", "<leader>h", ":noh<cr>", opts) -- clear highlights
 keymap("n", "<leader>c", ":bdelete<cr>", opts) -- close buffer
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
