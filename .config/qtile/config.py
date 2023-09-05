@@ -92,7 +92,7 @@ keys = [
 groups = []
 
 group_names = ["1", "2", "3", "4", "5"]
-group_labels = ["dev", "web", "chat", "music", "etc"]
+group_labels = ["", "󰾔", "󰭹", "󰎄", ""]
 group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall"]
 
 for i in range(len(group_names)):
@@ -199,21 +199,29 @@ def init_widgets_list():
                         background = colors[1]
                         ),
                widget.GroupBox(font="JetBrainsMono Nerd Font semi bold",
-                        fontsize = 14,
-                        margin_y = 3,
-                        margin_x = 3,
-                        padding_y = 2,
-                        padding_x = 0,
-                        borderwidth = 5,
-                        disable_drag = True,
-                        active = colors[0],
-                        inactive = colors[2],
-                        rounded = False,
-                        highlight_color = colors[4],
-                        highlight_method = "text",
-                        this_current_screen_border = colors[4],
-                        foreground = colors[2],
-                        background = colors[1]
+                        fontsize=20,
+                        margin_y=2,
+                        margin_x=10,
+                        padding_y=2,
+                        padding_x=1,
+                        borderwidth=5,
+                        disable_drag=True,
+                        active=colors[0],
+                        inactive=colors[2],
+                        rounded=False,
+                        highlight_color=colors[4],
+                        highlight_method="text",
+                        this_current_screen_border=colors[4],
+                        foreground=colors[2],
+                        background=colors[1],
+                        # decorations = [
+                        #     RectDecoration (
+                        #         colour = colors[5],
+                        #         padding_y = 2,
+                        #         radius = 5,
+                        #         filled = True
+                        #     ),
+                        # ],
                         ),
                widget.Sep(
                         linewidth = 1,
@@ -233,7 +241,7 @@ def init_widgets_list():
                         linewidth = 1
                         ),
                widget.CPU(
-                        format = ' CPU: {freq_current}GHz | {load_percent}% |',
+                        format = '   {freq_current}GHz | {load_percent}% |',
                         background = colors[1],
                         foreground = colors[1],
                         font = "JetBrainsMono Nerd Font bold",
@@ -251,7 +259,7 @@ def init_widgets_list():
                         foreground = colors[1],
                         background = colors[1],
                         threshold = 90,
-                        fmt = '{} |',
+                        fmt = '  {} |',
                         padding = 5,
                         decorations = [
                             RectDecoration (
@@ -288,7 +296,7 @@ def init_widgets_list():
                widget.Volume(
                         foreground = colors[1],
                         background = colors[1],
-                        fmt = ' Vol: {} |',
+                        fmt = ' 󰕾 {} |',
                         padding = 5,
                         decorations = [
                             RectDecoration (
@@ -310,7 +318,7 @@ def init_widgets_list():
                         background = colors[1],
                         fontsize = 14,
                         font = "JetBrainsMono Nerd Font bold",
-                        format="%d/%m/%y | %H:%M ",
+                        format="󰃭 %d/%m/%y | 󰥔 %H:%M ",
                         decorations = [
                             RectDecoration (
                                 colour = colors[5],
@@ -335,13 +343,13 @@ def init_widgets_list():
                #     pause_icon = 'x',
                #     format = '{icon} {artist}: {track}'
                #       ),
-                widget.UPowerWidget(
-                        border_colour = '#d8dee9',
-                        border_critical_colour = '#bf616a'
-                        ),
+                # widget.UPowerWidget(
+                #         border_colour = '#d8dee9',
+                #         border_critical_colour = '#bf616a'
+                #         ),
                 widget.Battery(
-                        charge_char = "charging:",
-                        discharge_char = "batt:",
+                        charge_char = "󰂄",
+                        discharge_char = "󰂂",
                         font = "JetBrainsMono Nerd Font bold",
                         fontsize = 13,
                         background = colors[1],
