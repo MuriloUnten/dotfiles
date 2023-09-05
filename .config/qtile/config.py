@@ -259,7 +259,7 @@ def init_widgets_list():
                         foreground = colors[1],
                         background = colors[1],
                         threshold = 90,
-                        fmt = '  {} |',
+                        fmt = ' {} |',
                         padding = 5,
                         decorations = [
                             RectDecoration (
@@ -293,16 +293,35 @@ def init_widgets_list():
                         foreground = colors[1],
                         background = colors[1]
                         ),
-               widget.Volume(
-                        foreground = colors[1],
+                widget.Battery(
+                        full_char = "󰁹",
+                        charge_char = "󰂄",
+                        discharge_char = "󰂂",
+                        font = "JetBrainsMono Nerd Font bold",
+                        fontsize = 13,
                         background = colors[1],
-                        fmt = ' 󰕾 {} |',
-                        padding = 5,
+                        foreground = colors[1],
+                        format = " {char} {percent:2.0%}",
+                        update_interval = 30,
                         decorations = [
                             RectDecoration (
                                 colour = colors[5],
                                 padding_y = 2,
                                 radius = [5, 0, 0, 5],
+                                filled = True
+                                ),
+                        ],
+                        ),
+               widget.Volume(
+                        foreground = colors[1],
+                        background = colors[1],
+                        fmt = '| 󰕾 {} |',
+                        padding = 5,
+                        decorations = [
+                            RectDecoration (
+                                colour = colors[5],
+                                padding_y = 2,
+                                radius = 0,
                                 filled = True
                                 ),
                         ],
@@ -328,12 +347,6 @@ def init_widgets_list():
                             ),
                         ],
                         ),
-               widget.Sep(
-                        linewidth = 1,
-                        padding = 10,
-                        foreground = colors[1],
-                        background = colors[1]
-                        ),
                #Spotify(
                #     foreground = colors[3],
                #     background = colors[1],
@@ -347,23 +360,6 @@ def init_widgets_list():
                 #         border_colour = '#d8dee9',
                 #         border_critical_colour = '#bf616a'
                 #         ),
-                widget.Battery(
-                        charge_char = "󰂄",
-                        discharge_char = "󰂂",
-                        font = "JetBrainsMono Nerd Font bold",
-                        fontsize = 13,
-                        background = colors[1],
-                        foreground = colors[1],
-                        format = " {char} {percent:2.0%} ",
-                            decorations = [
-                                RectDecoration(
-                                    colour = colors[4],
-                                    padding_y = 2,
-                                    radius = 5,
-                                    filled = True
-                                    ),
-                                ],
-                        ),
                 # widget.Systray(
                 #         background = colors[1],
                 #         icon_size = 20,
