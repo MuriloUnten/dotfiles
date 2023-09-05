@@ -65,6 +65,7 @@ lsp.ensure_installed({
     "lua_ls",
     "pylsp",
     "gopls",
+    "clangd",
 })
 
 -- (Optional) Configure lua language server for neovim

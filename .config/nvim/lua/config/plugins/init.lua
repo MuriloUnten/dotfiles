@@ -60,10 +60,14 @@ local plugins = {
     { 'nvim-lualine/lualine.nvim', dependencies = 'nvim-tree/nvim-web-devicons' },
 
     {
-        'goolord/alpha-nvim',
-        event = "VimEnter",
-        dependencies = { 'nvim-tree/nvim-web-devicons' },
-    }
+        "L3MON4D3/LuaSnip",
+        version = "2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+        -- install jsregexp (optional!).
+        build = "make install_jsregexp"
+    },
+    {
+        "lervag/vimtex"
+    },
 }
 local opts = {}
 
@@ -75,4 +79,3 @@ require("config.plugins.comment")
 require("config.plugins.nvimtree")
 require("config.plugins.bufferline")
 require("config.plugins.lualine")
-require("config.plugins.alpha")
