@@ -92,7 +92,7 @@ keys = [
 groups = []
 
 group_names = ["1", "2", "3", "4", "5"]
-group_labels = ["", "󰾔", "󰭹", "󰎄", ""]
+group_labels = ["", "󰾔", "󰭹", "󰎄", "󰇘"]
 group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall"]
 
 for i in range(len(group_names)):
@@ -308,13 +308,17 @@ def init_widgets_list():
                                 colour = colors[5],
                                 padding_y = 2,
                                 radius = [5, 0, 0, 5],
-                                filled = True
+                                filled = True,
                                 ),
                         ],
                         ),
                widget.Volume(
                         foreground = colors[1],
                         background = colors[1],
+                        fontsize = 14,
+                        font = "JetBrainsMono Nerd Font bold",
+                        # emoji = True,
+                        #emoji_list = ["󰖁", "󰕿", "", "󰕾"],
                         fmt = '| 󰕾 {} |',
                         padding = 5,
                         decorations = [
