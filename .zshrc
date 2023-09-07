@@ -15,6 +15,13 @@ alias zathura="devour zathura"
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
+alias cnvim="nvim ~/.config/lua/config"
+alias cwm="nvim ~/.config/qtile/config.py"
+alias csh="nvim ~/.zshrc"
+alias cterm="nvim ~/.config/alacritty/alacritty.yml"
+alias crofi="nvim ~/.config/rofi/config.rasi"
+alias crss="nvim ~/.config/newsboat"
+
 # The following lines were added by compinstall
 
 zstyle ':completion:*' completer _complete _ignored
