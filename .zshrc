@@ -15,7 +15,7 @@ alias zathura="devour zathura"
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
-alias cnvim="nvim ~/.config/lua/config"
+alias cnvim="nvim ~/.config/nvim/lua/config"
 alias cwm="nvim ~/.config/qtile/config.py"
 alias csh="nvim ~/.zshrc"
 alias cterm="nvim ~/.config/alacritty/alacritty.yml"
