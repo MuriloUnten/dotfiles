@@ -1,0 +1,21 @@
+#!/bin/sh
+
+tmux -u -f ~/.config/tmux/.tmux.conf new-session -s MainSession -n zsh -d
+
+tmux new-window -t MainSession -d -n Weather
+tmux new-window -t MainSession -d -n Hello
+
+tmux select-window -t MainSession:Hello
+DATE=$(date "+%Y-%m-%d")
+DAILY_NOTE=~/Obsidian/murilo/daily-notes/$DATE.md
+if !(test -f "$DAILY_NOTE"); then
+    cp ~/Obsidian/murilo/templates/daily-notes-template.md $DAILY_NOTE
+fi
+tmux send-keys -t MainSession:Hello "vim $DAILY_NOTE" Enter
+tmux split-window -h
+tmux send-keys -t MainSession:Hello "mail" Enter
+
+tmux select-window -t MainSession:Weather
+tmux send-keys -t MainSession:Weather "curl wttr.in" Enter
+
+tmux -u attach -t MainSession

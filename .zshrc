@@ -12,6 +12,7 @@ alias v="$EDITOR"
 alias ls="exa -a"
 alias gs="git status"
 alias rss="newsboat"
+alias mail="neomutt"
 alias monitoron="xrandr --output HDMI-1 --mode 1920x1080 --rate 120 --right-of eDP-1"
 alias zathura="devour zathura"
 
@@ -29,6 +30,7 @@ TMUX_CONFIG="~/.config/tmux/.tmux.conf"
 alias tn="tmux -u -f $TMUX_CONFIG new"
 alias ta="tmux -u -f $TMUX_CONFIG attach"
 alias ctmux="$EDITOR $TMUX_CONFIG"
+alias work="~/.config/tmux/tmux-base"
 
 # The following lines were added by compinstall
 zstyle ':completion:*' completer _complete _ignored
