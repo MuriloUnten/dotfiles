@@ -18,6 +18,7 @@ alias zathura="devour zathura"
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias dfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias ds='dotfiles status'
 
 alias cnvim="nvim ~/.config/nvim/lua/config"
 alias cwm="$EDITOR ~/.config/qtile/config.py"
