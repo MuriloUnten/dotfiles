@@ -17,6 +17,7 @@ alias monitoron="xrandr --output HDMI-1 --mode 1920x1080 --rate 120 --right-of e
 alias zathura="devour zathura"
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 alias cnvim="nvim ~/.config/nvim/lua/config"
 alias cwm="$EDITOR ~/.config/qtile/config.py"
