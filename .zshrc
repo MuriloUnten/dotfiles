@@ -9,7 +9,7 @@ EDITOR="nvim"
 
 alias vim=$EDITOR
 alias v="$EDITOR"
-alias ls="exa -a"
+alias ls="eza -a"
 alias gs="git status"
 alias rss="newsboat"
 alias mail="neomutt"
@@ -53,3 +53,4 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 export QSYS_ROOTDIR="/home/murilo/.cache/yay/quartus-free/pkg/quartus-free-quartus/opt/intelFPGA/21.1/quartus/sopc_builder/bin"
+export QT_QPA_PLATFORMTHEME=qt5ct
