@@ -46,6 +46,8 @@ keymap("n", "<A-k>", "V:m '<-2<CR>gv=gv<Esc>", opts)
 keymap("i", "<A-j>", "<Esc>V:m '>+1<CR>gv=gv<Esc>a", opts)
 keymap("i", "<A-k>", "<Esc>V:m '<-2<CR>gv=gv<Esc>a", opts)
 
+-- Delete previous word
+keymap("i", "<C-B>", "<C-W>", opts)
 
 -- Change indentation && continue in VISUAL mode
 keymap("v", ">", ">gv", opts)
