@@ -50,3 +50,6 @@ keymap("i", "<A-k>", "<Esc>V:m '<-2<CR>gv=gv<Esc>a", opts)
 -- Change indentation && continue in VISUAL mode
 keymap("v", ">", ">gv", opts)
 keymap("v", "<", "<gv", opts)
+
+-- Yank to clipboard
+keymap("n", "<leader>y", "\"+y", opts)
