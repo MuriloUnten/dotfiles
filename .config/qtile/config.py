@@ -38,6 +38,7 @@ from qtile_extras.widget.decorations import RectDecoration
 
 mod = "mod4"
 terminal = guess_terminal()
+myFont = "FiraCode Nerd Font Bold"
 
 keys = [
     Key([mod], "r", lazy.spawn("rofi -show drun"), desc="Open rofi drun"),
@@ -172,7 +173,7 @@ colors = init_colors()
 
 
 widget_defaults = dict(
-    font="JetBrainsMono Nerd Font bold",
+    font=myFont,
     fontsize=14,
     padding=3,
     background=colors[1]
@@ -198,7 +199,7 @@ def init_widgets_list():
                         foreground = colors[1],
                         background = colors[1]
                         ),
-               widget.GroupBox(font="JetBrainsMono Nerd Font semi bold",
+               widget.GroupBox(font="FiraCode Nerd Font Semi Bold",
                         fontsize=20,
                         margin_y=2,
                         margin_x=10,
@@ -229,7 +230,7 @@ def init_widgets_list():
                         background = colors[1],
                         foreground = colors[1],
                         ),
-               widget.WindowName(font="JetBrainsMono Nerd Font bold",
+               widget.WindowName(font=myFont,
                         fontsize = 14,
                         foreground = colors[0],
                         background = colors[1],
@@ -244,7 +245,7 @@ def init_widgets_list():
                         format = '   {freq_current}GHz | {load_percent}% |',
                         background = colors[1],
                         foreground = colors[1],
-                        font = "JetBrainsMono Nerd Font bold",
+                        font = myFont,
                         fontsize = 14,
                         decorations = [
                             RectDecoration (
@@ -274,10 +275,10 @@ def init_widgets_list():
                         format = '{MemUsed: .0f}{mm}/{MemTotal:.0f}{mm}',
                         foreground = colors[1],
                         background = colors[1],
-                        font = "JetBrainsMono Nerd Font bold",
+                        font = myFont,
                         fontsize = 14,
                         mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(guess_terminal() + ' -e htop')},
-                        fmt = 'RAM:{} ',
+                        fmt = '{} ',
                         decorations = [
                             RectDecoration (
                                 colour = colors[4],
@@ -297,7 +298,7 @@ def init_widgets_list():
                         full_char = "󰁹",
                         charge_char = "󰂄",
                         discharge_char = "󰂂",
-                        font = "JetBrainsMono Nerd Font bold",
+                        font = myFont,
                         fontsize = 13,
                         background = colors[1],
                         foreground = colors[1],
@@ -312,11 +313,27 @@ def init_widgets_list():
                                 ),
                         ],
                         ),
+                # widget.WiFiIcon(
+                #         font = myFont,
+                #         fontsize = 13,
+                #         active_colour=colors[0],
+                #         inactive_colour=colors[1],
+                #         background = colors[1],
+                #         foreground = colors[1],
+                #         decorations=[
+                #             RectDecoration (
+                #                 colour = colors[5],
+                #                 padding_y = 2,
+                #                 radius = 0,
+                #                 filled = True,
+                #                 ),
+                #         ],
+                #         ),
                widget.Volume(
                         foreground = colors[1],
                         background = colors[1],
                         fontsize = 14,
-                        font = "JetBrainsMono Nerd Font bold",
+                        font = myFont,
                         # emoji = True,
                         #emoji_list = ["󰖁", "󰕿", "", "󰕾"],
                         fmt = '| 󰕾 {} |',
@@ -340,7 +357,7 @@ def init_widgets_list():
                         foreground = colors[1],
                         background = colors[1],
                         fontsize = 14,
-                        font = "JetBrainsMono Nerd Font bold",
+                        font = myFont,
                         format="󰃭 %d/%m/%y | 󰥔 %H:%M ",
                         decorations = [
                             RectDecoration (
