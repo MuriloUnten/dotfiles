@@ -88,22 +88,21 @@ keys = [
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    # Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
 ]
 
 groups = []
 
 group_names = ["1", "2", "3", "4", "5"]
-group_labels = ["", "󰾔", "󰍩", "󰎄", "󰍻"]
+group_labels = ["", "", "", "", ""]
 group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall"]
 
 for i in range(len(group_names)):
     groups.append(
-            Group(
-                name=group_names[i],
-                layout=group_layouts[i],
-                label=group_labels[i],
-            )
+        Group(
+            name=group_names[i],
+            layout=group_layouts[i],
+            label=group_labels[i],
+        )
     )
 
 for i in groups:
@@ -132,9 +131,9 @@ for i in groups:
 
 layouts = [
     layout.MonadTall(
-        border_focus=["#e2863f00"],
-        border_normal=["#7f472e00"],
-        border_width=3,
+        border_focus=["#61afef00"],
+        border_normal=["#282c3400"],
+        border_width=2,
         margin=11,
         new_client_position="bottom"
     ),
@@ -157,16 +156,27 @@ layouts = [
 
 
 def init_colors():
-    return [["#ebdbb2", "#ebdbb2"],  # color 0
-            ["#282828cc", "#282828cc"],  # color 1
-            ["#a89984", "#a89984"],  # color 2
-            ["#a3be8c", "#a3be8c"],  # color 3
-            ["#e2863f", "#e2863f"],  # color 4
-            ["#d26d3f", "#d26d3f"],  # color 5
-            ["#bf616a", "#bf616a"],  # color 6
-            ["#81a1c1", "#81a1c1"],  # color 7
-            ["#b48ead", "#b48ead"],  # color 8
-            ["#d08770", "#d08770"]]  # color 9
+    # # Gruvbox
+    # return [["#ebdbb2", "#ebdbb2"],  # color 0
+    #         ["#282828cc", "#282828cc"],  # color 1
+    #         ["#a89984", "#a89984"],  # color 2
+    #         ["#a3be8c", "#a3be8c"],  # color 3
+    #         ["#e2863f", "#e2863f"],  # color 4
+    #         ["#d26d3f", "#d26d3f"],  # color 5
+    #         ["#bf616a", "#bf616a"],  # color 6
+    #         ["#81a1c1", "#81a1c1"],  # color 7
+    #         ["#b48ead", "#b48ead"],  # color 8
+    #         ["#d08770", "#d08770"]]  # color 9
+
+    return [["#282c34cc", "#282c34cc"],  # 0 (background)
+            ["#abb2bf", "#abb2bf"],      # 1 (foreground)
+            ["#e06c75", "#e06c75"],      # 2 (red)
+            ["#98c379", "#98c379"],      # 3 (green)
+            ["#e5c07b", "#e5c07b"],      # 4 (yellow)
+            ["#61afef", "#61afef"],      # 5 (blue)
+            ["#c678dd", "#c678dd"],      # 6 (magenta)
+            ["#56b6c2", "#56b6c2"],      # 7 (cyan)
+            ["#383c44", "#383c44"]]      # 8 (background 2 - grey)
 
 
 colors = init_colors()
@@ -183,227 +193,232 @@ extension_defaults = widget_defaults.copy()
 
 def init_widgets_list():
     widgets_list = [
-               widget.Sep(
-                        linewidth = 1,
-                        padding = 10,
-                        foreground = colors[1],
-                        background = colors[1]
-                        ),
-               widget.CurrentLayoutIcon(
-                        padding = 0,
-                        scale = 0.6,
-                        ),
-               widget.Sep(
-                        linewidth = 1,
-                        padding = 10,
-                        foreground = colors[1],
-                        background = colors[1]
-                        ),
-               widget.GroupBox(font="FiraCode Nerd Font Semi Bold",
-                        fontsize=20,
-                        margin_y=2,
-                        margin_x=10,
-                        padding_y=2,
-                        padding_x=1,
-                        borderwidth=5,
-                        disable_drag=True,
-                        active=colors[0],
-                        inactive=colors[2],
-                        rounded=False,
-                        highlight_color=colors[4],
-                        highlight_method="text",
-                        this_current_screen_border=colors[4],
-                        foreground=colors[2],
-                        background=colors[1],
-                        # decorations = [
-                        #     RectDecoration (
-                        #         colour = colors[5],
-                        #         padding_y = 2,
-                        #         radius = 5,
-                        #         filled = True
-                        #     ),
-                        # ],
-                        ),
-               widget.Sep(
-                        linewidth = 1,
-                        padding = 10,
-                        background = colors[1],
-                        foreground = colors[1],
-                        ),
-               widget.WindowName(font=myFont,
-                        fontsize = 14,
-                        foreground = colors[0],
-                        background = colors[1],
-                        ),
-               widget.Sep(
-                        foreground = colors[1],
-                        background = colors[1],
-                        padding = 10,
-                        linewidth = 1
-                        ),
-               widget.CPU(
-                        format = '   {freq_current}GHz | {load_percent}% |',
-                        background = colors[1],
-                        foreground = colors[1],
-                        font = myFont,
-                        fontsize = 14,
-                        decorations = [
-                            RectDecoration (
-                                colour = colors[4],
-                                padding_y = 2,
-                                radius = [5, 0, 0, 5],
-                                filled = True
-                            ),
-                        ],
-                        ),
-               widget.ThermalSensor(
-                        foreground = colors[1],
-                        background = colors[1],
-                        threshold = 90,
-                        fmt = ' {} |',
-                        padding = 5,
-                        decorations = [
-                            RectDecoration (
-                                colour = colors[4],
-                                padding_y = 2,
-                                radius = 0,
-                                filled = True
-                            ),
-                        ],
-                        ),
-               widget.Memory(
-                        format = '{MemUsed: .0f}{mm}/{MemTotal:.0f}{mm}',
-                        foreground = colors[1],
-                        background = colors[1],
-                        font = myFont,
-                        fontsize = 14,
-                        mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(guess_terminal() + ' -e htop')},
-                        fmt = '{} ',
-                        decorations = [
-                            RectDecoration (
-                                colour = colors[4],
-                                padding_y = 2,
-                                radius = [0, 5, 5, 0],
-                                filled = True
-                                ),
-                        ],
-                        ),
-               widget.Sep(
-                        linewidth = 1,
-                        padding = 10,
-                        foreground = colors[1],
-                        background = colors[1]
-                        ),
-                widget.Battery(
-                        full_char = "󰁹",
-                        charge_char = "󰂄",
-                        discharge_char = "󰂂",
-                        font = myFont,
-                        fontsize = 13,
-                        background = colors[1],
-                        foreground = colors[1],
-                        format = " {char} {percent:2.0%}",
-                        update_interval = 30,
-                        decorations = [
-                            RectDecoration (
-                                colour = colors[5],
-                                padding_y = 2,
-                                radius = [5, 0, 0, 5],
-                                filled = True,
-                                ),
-                        ],
-                        ),
-                # widget.WiFiIcon(
-                #         font = myFont,
-                #         fontsize = 13,
-                #         active_colour=colors[0],
-                #         inactive_colour=colors[1],
-                #         background = colors[1],
-                #         foreground = colors[1],
-                #         decorations=[
-                #             RectDecoration (
-                #                 colour = colors[5],
-                #                 padding_y = 2,
-                #                 radius = 0,
-                #                 filled = True,
-                #                 ),
-                #         ],
-                #         ),
-               widget.Volume(
-                        foreground = colors[1],
-                        background = colors[1],
-                        fontsize = 14,
-                        font = myFont,
-                        # emoji = True,
-                        #emoji_list = ["󰖁", "󰕿", "", "󰕾"],
-                        fmt = '| 󰕾 {} |',
-                        padding = 5,
-                        decorations = [
-                            RectDecoration (
-                                colour = colors[5],
-                                padding_y = 2,
-                                radius = 0,
-                                filled = True
-                                ),
-                        ],
-                        ),
-               # widget.Sep(
-               #          linewidth = 1,
-               #          padding = 10,
-               #          foreground = colors[1],
-               #          background = colors[1]
-               #          ),
-               widget.Clock(
-                        foreground = colors[1],
-                        background = colors[1],
-                        fontsize = 14,
-                        font = myFont,
-                        format="󰃭 %d/%m/%y | 󰥔 %H:%M ",
-                        decorations = [
-                            RectDecoration (
-                                colour = colors[5],
-                                padding_y = 2,
-                                radius = [0, 5, 5, 0],
-                                filled = True
-                            ),
-                        ],
-                        ),
-               #Spotify(
-               #     foreground = colors[3],
-               #     background = colors[1],
-               #     font = 'JetBrainsMono Nerd Font bold Bold',
-               #     fontsize = 13,
-               #     play_icon = '>',
-               #     pause_icon = 'x',
-               #     format = '{icon} {artist}: {track}'
-               #       ),
-                # widget.UPowerWidget(
-                #         border_colour = '#d8dee9',
-                #         border_critical_colour = '#bf616a'
-                #         ),
-                # widget.Systray(
-                #         background = colors[1],
-                #         icon_size = 20,
-                #         padding = 4
-                #         ),
-                widget.Sep(
-                        linewidth = 1,
-                        padding = 10,
-                        foreground = colors[1],
-                        background = colors[1]
-                        ),
-              ]
+        widget.Sep(
+            linewidth=1,
+            padding=10,
+            foreground=colors[0],
+            background=colors[0]
+        ),
+        widget.GroupBox(
+            font="FiraCode Nerd Font Semi Bold",
+            fontsize=22,
+            margin_y=2,
+            margin_x=5,
+            padding_y=2,
+            padding_x=1,
+            borderwidth=5,
+            disable_drag=True,
+            active=colors[5],
+            inactive=colors[1],
+            rounded=False,
+            highlight_color=colors[6],
+            highlight_method="text",
+            this_current_screen_border=colors[6],
+            foreground=colors[1],
+            background=colors[0],
+        ),
+        widget.Sep(
+            linewidth=1,
+            padding=10,
+            background=colors[0],
+            foreground=colors[0],
+        ),
+        widget.WindowName(
+            font=myFont,
+            fontsize=14,
+            foreground=colors[1],
+            background=colors[0],
+        ),
+        widget.Sep(
+            foreground=colors[0],
+            background=colors[0],
+            padding=10,
+            linewidth=1
+        ),
+        widget.TextBox(
+            text=" ",
+            background=colors[0],
+            foreground=colors[5],
+            font=myFont,
+            fontsize=14,
+            decorations=[
+                RectDecoration(
+                    colour=colors[8],
+                    padding_y=2,
+                    radius=[12, 0, 0, 12],
+                    filled=True,
+                ),
+            ],
+        ),
+        widget.CPU(
+            format= ' {load_percent}% |',
+            background=colors[0],
+            foreground=colors[1],
+            font=myFont,
+            fontsize=14,
+            decorations=[
+                RectDecoration(
+                    colour=colors[8],
+                    padding_y=2,
+                    radius=0,
+                    filled=True,
+                ),
+            ],
+        ),
+        widget.TextBox(
+            text="",
+            background=colors[0],
+            foreground=colors[2],
+            font=myFont,
+            fontsize=14,
+            decorations=[
+                RectDecoration(
+                    colour=colors[8],
+                    padding_y=2,
+                    radius=0,
+                    filled=True,
+                ),
+            ],
+        ),
+        widget.ThermalSensor(
+            foreground=colors[1],
+            background=colors[0],
+            threshold=90,
+            fmt='{} |',
+            padding=5,
+            decorations=[
+                RectDecoration(
+                    colour=colors[8],
+                    padding_y=2,
+                    radius=0,
+                    filled=True,
+                ),
+            ],
+        ),
+        widget.TextBox(
+            text="",
+            background=colors[0],
+            foreground=colors[5],
+            font=myFont,
+            fontsize=14,
+            decorations=[
+                RectDecoration(
+                    colour=colors[8],
+                    padding_y=2,
+                    radius=0,
+                    filled=True,
+                ),
+            ],
+        ),
+        widget.Memory(
+            format='{MemUsed: .0f}{mm}',
+            foreground=colors[1],
+            background=colors[0],
+            font=myFont,
+            fontsize=14,
+            fmt='{} ',
+            decorations=[
+                RectDecoration(
+                    colour=colors[8],
+                    padding_y=2,
+                    radius=[0, 12, 12, 0],
+                    filled=True,
+                ),
+            ],
+        ),
+        widget.Sep(
+            linewidth=1,
+            padding=15,
+            foreground=colors[0],
+            background=colors[0]
+        ),
+        widget.BatteryIcon(
+            theme_path='~/.config/qtile/assets/battery/',
+            background=colors[0],
+            scale=1,
+        ),
+        widget.Battery(
+            font=myFont,
+            fontsize=13,
+            background=colors[0],
+            foreground=colors[1],
+            format="{percent:2.0%}",
+            update_interval=10,
+        ),
+        widget.Sep(
+            linewidth=1,
+            padding=15,
+            foreground=colors[0],
+            background=colors[0]
+        ),
+        widget.Volume(
+            foreground=colors[1],
+            background=colors[0],
+            font=myFont,
+            theme_path='~/.config/qtile/assets/volume/',
+            emoji=True,
+            fontsize=14,
+        ),
+        widget.Volume(
+             foreground=colors[1],
+             background=colors[0],
+             fontsize=14,
+             font=myFont,
+             fmt='{}',
+             padding=0,
+        ),
+        widget.Sep(
+            linewidth=1,
+            padding=15,
+            foreground=colors[0],
+            background=colors[0]
+        ),
+        widget.TextBox(
+            text="󰃭",
+            background=colors[0],
+            foreground=colors[5],
+            font=myFont,
+            fontsize=18,
+        ),
+        widget.Clock(
+            foreground=colors[1],
+            background=colors[0],
+            fontsize=14,
+            font=myFont,
+            format=" %d/%m/%y ",
+        ),
+        widget.Clock(
+            foreground=colors[1],
+            background=colors[0],
+            fontsize=14,
+            font=myFont,
+            format=" 󰥔 %H:%M ",
+            decorations=[
+                RectDecoration(
+                    colour=colors[8],
+                    padding_y=2,
+                    radius=12,
+                    filled=True,
+                ),
+            ],
+        ),
+        widget.Sep(
+            linewidth=1,
+            padding=10,
+            foreground=colors[0],
+            background=colors[0]
+        ),
+    ]
     return widgets_list
+
 
 screens = [
     Screen(
         top=bar.Bar(
             widgets=init_widgets_list(),
-            size=22,
-            # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
-            # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
-            background="#282828e5",
-            margin=[7, 11, -4, 11],
+            size=28,
+            background="#282c34ff",
+            margin=[10, 11, -4, 11],
             opacity=1.0
         )
     ),
@@ -411,10 +426,8 @@ screens = [
         top=bar.Bar(
             widgets=init_widgets_list(),
             size=22,
-            # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
-            # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
-            background="#282828e5",
-            margin=[7, 11, -4, 11],
+            background="#282c34cc",
+            margin=[0, 0, -4, 0],
             opacity=1.0
         )
     ),
