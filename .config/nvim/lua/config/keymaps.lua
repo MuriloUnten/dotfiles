@@ -54,4 +54,4 @@ keymap("v", ">", ">gv", opts)
 keymap("v", "<", "<gv", opts)
 
 -- Yank to clipboard
-keymap("n", "<leader>y", "\"+y", opts)
+vim.keymap.set({"n", "v"}, "<leader>y", "\"+y", opts)

@@ -1,12 +1,18 @@
-require"nvim-treesitter.configs".setup {
-    ensure_installed = { "c", "cpp", "javascript", "python", "lua", "vim", "vimdoc", "query", "latex", "yaml"},
+return {
+    "nvim-treesitter/nvim-treesitter", run = {":TSUpdate"},
 
-    -- Install parsers synchronously (only applied to `ensure_installed`)
-    sync_install = false,
+    config = function()
+        require("nvim-treesitter.configs").setup({
+            ensure_installed = { "c", "cpp", "javascript", "python", "lua", "vim", "vimdoc", "query", "latex", "yaml"},
 
-    auto_install = true,
+            -- Install parsers synchronously (only applied to `ensure_installed`)
+            sync_install = {false},
 
-    highlight = {
-    enable = true,
-    },
+            auto_install = {true},
+
+            highlight = {
+                enable = true,
+            },
+        })
+    end
 }
