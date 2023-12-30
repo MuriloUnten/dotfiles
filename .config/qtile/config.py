@@ -38,11 +38,14 @@ from qtile_extras.widget.decorations import RectDecoration
 
 mod = "mod4"
 terminal = guess_terminal()
+fileManager = "nemo"
+browser = "brave"
 myFont = "FiraCode Nerd Font Bold"
 
 keys = [
+    Key([mod], "e", lazy.spawn(fileManager), desc="Open the file manager"),
+    Key([mod], "b", lazy.spawn(browser), desc="launch browser"),
     Key([mod], "r", lazy.spawn("rofi -show drun"), desc="Open rofi drun"),
-    Key([mod], "b", lazy.spawn("brave"), desc="launch browser"),
     Key([mod], "o", lazy.spawn("obsidian"), desc="launch Obsidian"),
     Key([mod], "s", lazy.spawn("spotify-launcher"), desc="launch Spotify"),
     Key([mod], "d", lazy.spawn("discord"), desc="launch Discord"),
