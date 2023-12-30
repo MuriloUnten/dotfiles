@@ -58,15 +58,10 @@ keys = [
     Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
     Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
     Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
-    # Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
-    # Move windows between left/right columns or move up/down in current stack.
-    # Moving out of range in Columns layout will create new column.
     Key([mod, "shift"], "h", lazy.layout.shuffle_left(), desc="Move window to the left"),
     Key([mod, "shift"], "l", lazy.layout.shuffle_right(), desc="Move window to the right"),
     Key([mod, "shift"], "j", lazy.layout.shuffle_down(), desc="Move window down"),
     Key([mod, "shift"], "k", lazy.layout.shuffle_up(), desc="Move window up"),
-    # Grow windows. If current window is on the edge of screen and direction
-    # will be to screen edge - window would shrink.
     Key([mod, "control"], "j", lazy.layout.shrink(), desc="Shrink window"),
     Key([mod, "control"], "k", lazy.layout.grow(), desc="Grow window"),
     Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
@@ -168,6 +163,7 @@ def init_colors():
     #         ["#b48ead", "#b48ead"],  # color 8
     #         ["#d08770", "#d08770"]]  # color 9
 
+    # Onedark
     return [["#282c34cc", "#282c34cc"],  # 0 (background)
             ["#abb2bf", "#abb2bf"],      # 1 (foreground)
             ["#e06c75", "#e06c75"],      # 2 (red)
@@ -426,8 +422,8 @@ screens = [
         top=bar.Bar(
             widgets=init_widgets_list(),
             size=22,
-            background="#282c34cc",
-            margin=[0, 0, -4, 0],
+            background="#282c34ff",
+            margin=[10, 11, -4, 11],
             opacity=1.0
         )
     ),
@@ -446,6 +442,9 @@ follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
 floating_layout = layout.Floating(
+    border_width=2,
+    border_focus=colors[5],
+    border_normal=colors[0],
     float_rules=[
         # Run the utility of `xprop` to see the wm class and name of an X client.
         *layout.Floating.default_float_rules,
