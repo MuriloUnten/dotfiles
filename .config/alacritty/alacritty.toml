@@ -52,8 +52,6 @@ program = "/bin/zsh"
 
 [window]
 dynamic_title = true
-history = 10000
-multiplier = 3
 opacity = 1.0
 title = "Alacritty"
 
