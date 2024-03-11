@@ -7,6 +7,7 @@ fi
 
 EDITOR="nvim"
 
+alias ut="cd ~/Documents/utfpr/"
 alias vim=$EDITOR
 alias v="$EDITOR"
 alias ls="eza -a"
@@ -15,6 +16,7 @@ alias rss="newsboat"
 alias mail="neomutt"
 alias monitoron="xrandr --output HDMI-1 --mode 1920x1080 --rate 120 --right-of eDP-1"
 alias zathura="devour zathura"
+alias riscv="devour java -jar ~/Documents/utfpr/arqcomp/rars1_6.jar"
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias dfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
@@ -54,5 +56,5 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-export QSYS_ROOTDIR="/home/murilo/.cache/yay/quartus-free/pkg/quartus-free-quartus/opt/intelFPGA/21.1/quartus/sopc_builder/bin"
+export QSYS_ROOTDIR="/home/murilo/.cache/yay/quartus-free/pkg/quartus-free-quartus/opt/intelFPGA/23.1/quartus/sopc_builder/bin"
 export QT_QPA_PLATFORMTHEME=qt5ct
