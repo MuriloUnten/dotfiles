@@ -7,7 +7,6 @@ fi
 
 EDITOR="nvim"
 
-alias ut="cd ~/Documents/utfpr/"
 alias vim=$EDITOR
 alias v="$EDITOR"
 alias ls="eza -a"
@@ -17,7 +16,6 @@ alias mail="neomutt"
 alias monitoron="xrandr --output HDMI-1 --mode 1920x1080 --rate 120 --right-of eDP-1"
 alias zathura="devour zathura"
 alias z="devour zathura"
-alias riscv="devour java -jar ~/Documents/utfpr/arqcomp/rars1_6.jar"
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias dfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
@@ -29,6 +27,11 @@ alias csh="$EDITOR ~/.zshrc"
 alias cterm="$EDITOR ~/.config/alacritty/alacritty.yml"
 alias crofi="$EDITOR ~/.config/rofi/config.rasi"
 alias crss="$EDITOR ~/.config/newsboat"
+
+# University
+alias ut="cd ~/Documents/utfpr/"
+alias riscv="devour java -jar ~/Documents/utfpr/arqcomp/rars1_6.jar"
+alias wave="devour gtkwave"
 
 #Tmux
 TMUX_CONFIG="~/.config/tmux/.tmux.conf"
