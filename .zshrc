@@ -30,7 +30,7 @@ alias crss="$EDITOR ~/.config/newsboat"
 
 # University
 alias ut="cd ~/Documents/utfpr/"
-alias riscv="devour java -jar ~/Documents/utfpr/arqcomp/rars1_6.jar"
+alias riscv="devour java -jar ~/Documents/utfpr/arqcomp-elew30/rars1_6.jar"
 alias wave="devour gtkwave"
 
 #Tmux
