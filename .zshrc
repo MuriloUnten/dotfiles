@@ -7,6 +7,8 @@ fi
 
 EDITOR="nvim"
 
+alias wifi="nmtui"
+alias wf="nmtui"
 alias vim=$EDITOR
 alias v="$EDITOR"
 alias ls="eza -a"
