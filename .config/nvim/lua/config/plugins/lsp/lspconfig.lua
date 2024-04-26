@@ -107,6 +107,11 @@ return {
             capabilities = capabilities,
             on_attach = on_attach,
         })
+
+        lspconfig["hdl_checker"].setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+        })
     end,
 
 }
