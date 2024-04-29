@@ -25,6 +25,7 @@
 # SOFTWARE.
 # -*- coding: utf-8 -*-
 
+
 import psutil
 from typing import List
 from libqtile import bar, layout, widget, hook
@@ -41,6 +42,14 @@ terminal = guess_terminal()
 fileManager = "nemo"
 browser = "brave"
 myFont = "FiraCode Nerd Font Bold"
+
+
+def replace_window_name(text):
+        windowIsBrave = text.find(" - Brave")
+        if windowIsBrave != -1:
+            text = "Brave"
+        return text
+
 
 keys = [
     Key([mod], "e", lazy.spawn(fileManager), desc="Open the file manager"),
@@ -229,6 +238,7 @@ def init_widgets_list():
             fontsize=14,
             foreground=colors[1],
             background=colors[0],
+            parse_text=replace_window_name,
         ),
         widget.Sep(
             foreground=colors[0],
