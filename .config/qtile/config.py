@@ -39,6 +39,7 @@ from qtile_extras.widget.decorations import RectDecoration
 
 from pathlib import Path
 import subprocess
+import socket
 
 
 mod = "mod4"
@@ -46,6 +47,7 @@ terminal = guess_terminal()
 fileManager = "nemo"
 browser = "brave"
 myFont = "FiraCode Nerd Font Bold"
+hostname = socket.gethostname()
 
 
 @hook.subscribe.startup
@@ -212,13 +214,49 @@ extension_defaults = widget_defaults.copy()
 
 
 def init_widgets_list():
-    widgets_list = [
-        widget.Sep(
+    separator0 = widget.Sep(
+            linewidth=0,
+            padding=0,
+            foreground=colors[0],
+            background=colors[0]
+        )
+
+    separator10 = widget.Sep(
             linewidth=1,
             padding=10,
             foreground=colors[0],
             background=colors[0]
-        ),
+        )
+    separator15 = widget.Sep(
+            linewidth=1,
+            padding=15,
+            foreground=colors[0],
+            background=colors[0]
+        )
+
+    if hostname == "arch-laptop":
+        batteryIcon = widget.BatteryIcon(
+                theme_path='~/.config/qtile/assets/battery/',
+                background=colors[0],
+                scale=1,
+                )
+
+        battery = widget.Battery(
+                font=myFont,
+                fontsize=13,
+                background=colors[0],
+                foreground=colors[1],
+                format="{percent:2.0%}",
+                update_interval=10,
+                )
+        batterySep = separator10
+    else:
+        batteryIcon = separator0
+        battery = separator0
+        batterySep = separator0
+
+    widgets_list = [
+        separator10,
         widget.GroupBox(
             font="FiraCode Nerd Font Semi Bold",
             fontsize=22,
@@ -237,12 +275,7 @@ def init_widgets_list():
             foreground=colors[1],
             background=colors[0],
         ),
-        widget.Sep(
-            linewidth=1,
-            padding=10,
-            background=colors[0],
-            foreground=colors[0],
-        ),
+        separator10,
         widget.WindowName(
             font=myFont,
             fontsize=14,
@@ -250,12 +283,7 @@ def init_widgets_list():
             background=colors[0],
             parse_text=replace_window_name,
         ),
-        widget.Sep(
-            foreground=colors[0],
-            background=colors[0],
-            padding=10,
-            linewidth=1
-        ),
+        separator10,
         widget.TextBox(
             text=" ",
             background=colors[0],
@@ -347,31 +375,10 @@ def init_widgets_list():
                 ),
             ],
         ),
-        widget.Sep(
-            linewidth=1,
-            padding=15,
-            foreground=colors[0],
-            background=colors[0]
-        ),
-        widget.BatteryIcon(
-            theme_path='~/.config/qtile/assets/battery/',
-            background=colors[0],
-            scale=1,
-        ),
-        widget.Battery(
-            font=myFont,
-            fontsize=13,
-            background=colors[0],
-            foreground=colors[1],
-            format="{percent:2.0%}",
-            update_interval=10,
-        ),
-        widget.Sep(
-            linewidth=1,
-            padding=15,
-            foreground=colors[0],
-            background=colors[0]
-        ),
+        separator15,
+        batteryIcon,
+        battery,
+        batterySep,
         widget.Volume(
             foreground=colors[1],
             background=colors[0],
@@ -388,12 +395,7 @@ def init_widgets_list():
              fmt='{}',
              padding=0,
         ),
-        widget.Sep(
-            linewidth=1,
-            padding=15,
-            foreground=colors[0],
-            background=colors[0]
-        ),
+        separator15,
         widget.TextBox(
             text="󰃭",
             background=colors[0],
@@ -423,12 +425,7 @@ def init_widgets_list():
                 ),
             ],
         ),
-        widget.Sep(
-            linewidth=1,
-            padding=10,
-            foreground=colors[0],
-            background=colors[0]
-        ),
+        separator15,
     ]
     return widgets_list
 
@@ -464,7 +461,7 @@ mouse = [
 dgroups_key_binder = None
 dgroups_app_rules = []  # type: list
 follow_mouse_focus = True
-bring_front_click = False
+bring_front_click = True
 cursor_warp = False
 floating_layout = layout.Floating(
     border_width=2,
