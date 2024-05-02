@@ -37,11 +37,21 @@ from qtile_extras import widget
 from qtile_extras.widget.decorations import BorderDecoration
 from qtile_extras.widget.decorations import RectDecoration
 
+from pathlib import Path
+import subprocess
+
+
 mod = "mod4"
 terminal = guess_terminal()
 fileManager = "nemo"
 browser = "brave"
 myFont = "FiraCode Nerd Font Bold"
+
+
+@hook.subscribe.startup
+def autostart():
+    script = Path("~/.config/qtile/autostart.sh").expanduser()
+    subprocess.run(script)
 
 
 def replace_window_name(text):
