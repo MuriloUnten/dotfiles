@@ -18,7 +18,7 @@ alias gs="git status"
 alias gc="git commit"
 alias ga="git add"
 alias gl="git log"
-alias gf="git diff"
+alias gd="git diff"
 
 alias rss="newsboat"
 alias mail="neomutt"
@@ -29,6 +29,10 @@ alias z="devour zathura"
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias dfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias ds='dotfiles status'
+alias dc='dotfiles commit'
+alias da='dotfiles add'
+alias dl='dotfiles log'
+alias ddiff='dotfiles diff'
 
 alias cnvim="nvim ~/.config/nvim/lua/config"
 alias cwm="$EDITOR ~/.config/qtile/config.py"
