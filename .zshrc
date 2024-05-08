@@ -12,7 +12,13 @@ alias wf="nmtui"
 alias vim=$EDITOR
 alias v="$EDITOR"
 alias ls="eza -a"
+
+# Git
 alias gs="git status"
+alias gc="git commit"
+alias ga="git add"
+alias gl="git log"
+
 alias rss="newsboat"
 alias mail="neomutt"
 alias monitoron="xrandr --output HDMI-1 --mode 1920x1080 --rate 120 --right-of eDP-1"
