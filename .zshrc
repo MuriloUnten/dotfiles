@@ -18,6 +18,7 @@ alias gs="git status"
 alias gc="git commit"
 alias ga="git add"
 alias gl="git log"
+alias gf="git diff"
 
 alias rss="newsboat"
 alias mail="neomutt"
