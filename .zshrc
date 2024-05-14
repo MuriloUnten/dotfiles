@@ -37,7 +37,7 @@ alias ddiff='dotfiles diff'
 alias cnvim="nvim ~/.config/nvim/lua/config"
 alias cwm="$EDITOR ~/.config/qtile/config.py"
 alias csh="$EDITOR ~/.zshrc"
-alias cterm="$EDITOR ~/.config/alacritty/alacritty.yml"
+alias cterm="$EDITOR ~/.config/alacritty/alacritty.toml"
 alias crofi="$EDITOR ~/.config/rofi/config.rasi"
 alias crss="$EDITOR ~/.config/newsboat"
 
@@ -74,3 +74,4 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 export QT_QPA_PLATFORMTHEME=qt5ct
+export QT_SELECT=5
