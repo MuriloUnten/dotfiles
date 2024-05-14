@@ -42,12 +42,15 @@ import subprocess
 import socket
 
 
+hostname = socket.gethostname()
 mod = "mod4"
-terminal = guess_terminal()
 fileManager = "nemo"
 browser = "brave"
 myFont = "FiraCode Nerd Font Bold"
-hostname = socket.gethostname()
+
+# Ugly ass solution but it works
+termFontSize = 9.5 if hostname == "arch-desktop" else 8
+terminal = f"alacritty -o font.size={termFontSize}"
 
 
 @hook.subscribe.startup
