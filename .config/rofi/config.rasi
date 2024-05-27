@@ -28,7 +28,7 @@ configuration {
 window {
   width: 30%;
   background-color: @bg;
-  border: 3;
+  border: 1;
   border-color: #61afef;
 }
 
