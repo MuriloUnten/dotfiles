@@ -157,7 +157,7 @@ layouts = [
     layout.MonadTall(
         border_focus=["#61afef00"],
         border_normal=["#282c3400"],
-        border_width=2,
+        border_width=1,
         margin=11,
         new_client_position="bottom"
     ),
@@ -439,8 +439,8 @@ screens = [
             widgets=init_widgets_list(),
             size=28,
             background="#282c34ff",
-            margin=[10, 11, -4, 11],
-            opacity=1.0
+            margin=[6, 11, -4, 11],
+            opacity=1.0,
         )
     ),
     Screen(
@@ -467,7 +467,7 @@ follow_mouse_focus = True
 bring_front_click = True
 cursor_warp = False
 floating_layout = layout.Floating(
-    border_width=2,
+    border_width=1,
     border_focus=colors[5],
     border_normal=colors[0],
     float_rules=[
