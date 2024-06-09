@@ -76,6 +76,18 @@ return {
         lspconfig["pylsp"].setup({
             capabilities = capabilities,
             on_attach = on_attach,
+            settings = {
+                pylsp = {
+                    plugins = {
+                        pylint = { enabled = false },
+                        pyflakes = { enabled = false },
+                        pycodestyle = {
+                            ignore = {'E501', 'E265', 'E305', 'E302'},
+                            maxLineLenght = 120
+                        }
+                    }
+                },
+            }
         })
 
         lspconfig["gopls"].setup({
@@ -84,7 +96,7 @@ return {
             settings = {
                 gopls = {
                     completeUnimported = true,
-                    usePlaceholders = true,
+                    usePlaceholders = false,
                 },
             },
         })
