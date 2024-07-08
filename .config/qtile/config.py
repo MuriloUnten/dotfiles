@@ -73,6 +73,7 @@ keys = [
     Key([mod], "o", lazy.spawn("obsidian"), desc="launch Obsidian"),
     Key([mod], "s", lazy.spawn("spotify-launcher"), desc="launch Spotify"),
     Key([mod], "d", lazy.spawn("discord"), desc="launch Discord"),
+    Key([mod], "p", lazy.spawn("flameshot gui"), desc="launch flameshot"),
 
     Key([], "XF86MonBrightnessDown", lazy.spawn("brillo -q -U 5"), desc="decrease screeen brightness"),
     Key([], "XF86MonBrightnessUp", lazy.spawn("brillo -q -A 5"), desc="increase screeen brightness"),
