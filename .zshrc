@@ -47,6 +47,9 @@ alias ut="cd ~/Documents/utfpr/"
 alias riscv="devour java -jar ~/Documents/utfpr/arqcomp-elew30/rars1_6.jar"
 alias wave="devour gtkwave"
 
+# Work
+alias qr="devour zathura ~/work/qr.pdf"
+
 #Tmux
 TMUX_CONFIG="~/.config/tmux/.tmux.conf"
 alias tn="tmux -u -f $TMUX_CONFIG new"
