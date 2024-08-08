@@ -79,3 +79,6 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 export QT_QPA_PLATFORMTHEME=qt5ct
 export QT_SELECT=5
+
+PATH="$HOME/.local/bin:$PATH"
+export npm_config_prefix="$HOME/.local"
