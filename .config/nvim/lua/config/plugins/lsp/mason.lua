@@ -27,6 +27,7 @@ return {
                 "emmet_ls",
                 "tsserver",
                 "cssls",
+                "jdtls"
             },
             automatic_installation = true,
         })
