@@ -25,7 +25,7 @@ return {
                 "clangd",
                 "html",
                 "emmet_ls",
-                "tsserver",
+                "ts_ls",
                 "cssls",
                 "jdtls"
             },
