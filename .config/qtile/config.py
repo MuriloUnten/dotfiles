@@ -50,7 +50,8 @@ myFont = "FiraCode Nerd Font Bold"
 
 # Ugly ass solution but it works
 termFontSize = 9.5 if hostname == "arch-desktop" else 8
-terminal = f"alacritty -o font.size={termFontSize}"
+# terminal = f"alacritty -o font.size={termFontSize}"
+terminal = f"kitty -o font_size={termFontSize}"
 
 
 @hook.subscribe.startup
@@ -60,10 +61,10 @@ def autostart():
 
 
 def replace_window_name(text):
-        windowIsBrave = text.find(" - Brave")
-        if windowIsBrave != -1:
-            text = "Brave"
-        return text
+    windowIsBrave = text.find(" - Brave")
+    if windowIsBrave != -1:
+        text = "Brave"
+    return text
 
 
 keys = [
@@ -219,40 +220,40 @@ extension_defaults = widget_defaults.copy()
 
 def init_widgets_list():
     separator0 = widget.Sep(
-            linewidth=0,
-            padding=0,
-            foreground=colors[0],
-            background=colors[0]
-        )
+        linewidth=0,
+        padding=0,
+        foreground=colors[0],
+        background=colors[0]
+    )
 
     separator10 = widget.Sep(
-            linewidth=1,
-            padding=10,
-            foreground=colors[0],
-            background=colors[0]
-        )
+        linewidth=1,
+        padding=10,
+        foreground=colors[0],
+        background=colors[0]
+    )
     separator15 = widget.Sep(
-            linewidth=1,
-            padding=15,
-            foreground=colors[0],
-            background=colors[0]
-        )
+        linewidth=1,
+        padding=15,
+        foreground=colors[0],
+        background=colors[0]
+    )
 
     if hostname == "arch-laptop":
         batteryIcon = widget.BatteryIcon(
-                theme_path='~/.config/qtile/assets/battery/',
-                background=colors[0],
-                scale=1,
-                )
+            theme_path='~/.config/qtile/assets/battery/',
+            background=colors[0],
+            scale=1,
+        )
 
         battery = widget.Battery(
-                font=myFont,
-                fontsize=13,
-                background=colors[0],
-                foreground=colors[1],
-                format="{percent:2.0%}",
-                update_interval=10,
-                )
+            font=myFont,
+            fontsize=13,
+            background=colors[0],
+            foreground=colors[1],
+            format="{percent:2.0%}",
+            update_interval=10,
+        )
         batterySep = separator10
     else:
         batteryIcon = separator0
@@ -304,7 +305,7 @@ def init_widgets_list():
             ],
         ),
         widget.CPU(
-            format= ' {load_percent}% |',
+            format=' {load_percent}% |',
             background=colors[0],
             foreground=colors[1],
             font=myFont,
@@ -392,12 +393,12 @@ def init_widgets_list():
             fontsize=14,
         ),
         widget.Volume(
-             foreground=colors[1],
-             background=colors[0],
-             fontsize=14,
-             font=myFont,
-             fmt='{}',
-             padding=0,
+            foreground=colors[1],
+            background=colors[0],
+            fontsize=14,
+            font=myFont,
+            fmt='{}',
+            padding=0,
         ),
         separator15,
         widget.TextBox(
