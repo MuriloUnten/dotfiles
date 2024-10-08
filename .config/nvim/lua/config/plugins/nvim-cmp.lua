@@ -20,6 +20,12 @@ return {
         local luasnip = require("luasnip")
         require("luasnip.loaders.from_vscode").lazy_load()
 
+        local function get_custom_border()
+            return cmp.config.window.bordered({
+                winhighlight = cmp.config.window.bordered().winhighlight:gsub(':FloatBorder', ':CustomFloatBorder'),
+            })
+        end
+
         cmp.setup({
             completion = {
                 completeopt = "menu,menuone,preview",
@@ -44,8 +50,10 @@ return {
                 {name = "buffer"},
                 {name = "path"},
             }),
+            window = {
+                completion = get_custom_border(),
+                documentation = get_custom_border(),
+            },
         })
-
-
     end,
 }
