@@ -15,6 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = {
     {import = "config.plugins"},
     {import = "config.plugins.lsp"},
+    {import = "config.plugins.jupyter"},
 }
 
 local opts = {
