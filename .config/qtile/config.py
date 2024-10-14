@@ -49,7 +49,7 @@ browser = "brave"
 myFont = "FiraCode Nerd Font Bold"
 
 # Ugly ass solution but it works
-termFontSize = 9.5 if hostname == "arch-desktop" else 8
+termFontSize = 9.5 if hostname == "arch-desktop" else 12.0
 # terminal = f"alacritty -o font.size={termFontSize}"
 terminal = f"kitty -o font_size={termFontSize}"
 
