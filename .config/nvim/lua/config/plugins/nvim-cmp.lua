@@ -20,9 +20,11 @@ return {
         local luasnip = require("luasnip")
         require("luasnip.loaders.from_vscode").lazy_load()
 
+        vim.cmd "highlight! Border guibg=NONE guifg=#61afef "
+
         local function get_custom_border()
             return cmp.config.window.bordered({
-                winhighlight = cmp.config.window.bordered().winhighlight:gsub(':FloatBorder', ':CustomFloatBorder'),
+                winhighlight = cmp.config.window.bordered().winhighlight:gsub(':FloatBorder', ':Border'),
             })
         end
 

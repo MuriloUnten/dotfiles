@@ -27,7 +27,7 @@ return {
                 "emmet_ls",
                 "ts_ls",
                 "cssls",
-                "jdtls"
+                "jdtls",
             },
             automatic_installation = true,
         })

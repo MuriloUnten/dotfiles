@@ -10,6 +10,25 @@ return {
         local cmp_nvim_lsp = require("cmp_nvim_lsp")
         local opts = {noremap = true, silent = true}
 
+        vim.cmd [[ autocmd! ColorScheme * highlight NormalFloat guibg=#282c34 ]]
+        vim.cmd [[ autocmd! ColorScheme * highlight FloatBorder guifg=#61afef ]]
+
+        local border = {
+            {"╭", "FloatBorder"},
+            {"─", "FloatBorder"},
+            {"╮", "FloatBorder"},
+            {"│", "FloatBorder"},
+            {"╯", "FloatBorder"},
+            {"─", "FloatBorder"},
+            {"╰", "FloatBorder"},
+            {"│", "FloatBorder"},
+        }
+
+        local handlers = {
+            ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = border,  }),
+            ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
+        }
+
         local on_attach = function(client, bufnr)
             opts.buffer = bufnr
 
@@ -58,6 +77,7 @@ return {
         lspconfig["lua_ls"].setup({
             capabilities = capabilities,
             on_attach = on_attach,
+            handlers = handlers,
             settings = {
                 Lua = {
                     diagnostics = {
@@ -76,6 +96,7 @@ return {
         lspconfig["pylsp"].setup({
             capabilities = capabilities,
             on_attach = on_attach,
+            handlers = handlers,
             settings = {
                 pylsp = {
                     plugins = {
@@ -93,6 +114,7 @@ return {
         lspconfig["gopls"].setup({
             capabilities = capabilities,
             on_attach = on_attach,
+            handlers = handlers,
             settings = {
                 gopls = {
                     completeUnimported = true,
@@ -104,31 +126,37 @@ return {
         lspconfig["clangd"].setup({
             capabilities = capabilities,
             on_attach = on_attach,
+            handlers = handlers,
         })
 
         lspconfig["html"].setup({
             capabilities = capabilities,
             on_attach = on_attach,
+            handlers = handlers,
         })
 
         lspconfig["emmet_ls"].setup({
             capabilities = capabilities,
             on_attach = on_attach,
+            handlers = handlers,
         })
 
         lspconfig["ts_ls"].setup({
             capabilities = capabilities,
             on_attach = on_attach,
+            handlers = handlers,
         })
 
         lspconfig["cssls"].setup({
             capabilities = capabilities,
             on_attach = on_attach,
+            handlers = handlers,
         })
 
         lspconfig["hdl_checker"].setup({
             capabilities = capabilities,
             on_attach = on_attach,
+            handlers = handlers,
         })
     end,
 
