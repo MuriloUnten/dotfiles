@@ -46,6 +46,16 @@ return {
                 inc_rename = false, -- enables an input dialog for inc-rename.nvim
                 lsp_doc_border = false, -- add a border to hover docs and signature help
             },
+            require("lualine").setup({
+                sections = {
+                    lualine_x = {
+                        {
+                            require("noice").api.statusline.mode.get,
+                            cond = require("noice").api.statusline.mode.has,
+                        }
+                    },
+                },
+            })
         })
     end,
 }
