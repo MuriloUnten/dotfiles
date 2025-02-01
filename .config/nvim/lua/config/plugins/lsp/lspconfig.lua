@@ -103,7 +103,7 @@ return {
                         pylint = { enabled = false },
                         pyflakes = { enabled = false },
                         pycodestyle = {
-                            ignore = {'E501', 'E265', 'E305', 'E302'},
+                            ignore = {'E501', 'E265', 'E305', 'E302', 'E303', 'E402'},
                             maxLineLenght = 120
                         }
                     }

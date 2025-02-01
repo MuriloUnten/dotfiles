@@ -6,7 +6,8 @@ return {
     init = function()
         -- these are examples, not defaults. Please see the readme
         vim.g.molten_image_provider = "image.nvim"
-        vim.g.molten_output_win_max_height = 20
+        vim.g.molten_output_win_max_height = 30
+        vim.g.molten_image_location = "float"
         vim.g.molten_virt_text_output = true
         vim.g.molten_virt_lines_off_by_1 = true -- show output below ``` delimiter
 
@@ -16,7 +17,7 @@ return {
         vim.keymap.set("n", "<localleader>ne", ":MoltenEvaluateOperator<CR>", opts)
 
         opts.desc = "open output window"
-        vim.keymap.set("n", "<localleader>no", ":MoltenEnterOutput<CR>", opts)
+        vim.keymap.set("n", "<localleader>no", ":noautocmd MoltenEnterOutput<CR>", opts)
 
         opts.desc = "reevaluate cell"
         vim.keymap.set("n", "<localleader>nre", ":MoltenReevaluateCell<CR>", opts)
