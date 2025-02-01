@@ -66,7 +66,6 @@ def replace_window_name(text):
         text = "Brave"
     return text
 
-
 keys = [
     Key([mod], "e", lazy.spawn(fileManager), desc="Open the file manager"),
     Key([mod], "b", lazy.spawn(browser), desc="launch browser"),
@@ -118,9 +117,9 @@ keys = [
 
 groups = []
 
-group_names = ["1", "2", "3", "4", "5"]
-group_labels = ["", "", "", "", ""]
-group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall"]
+group_names = ["1", "2", "3", "4", "5", "6"]
+group_labels = ["", "", "", "", "", ""]
+group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall"]
 
 for i in range(len(group_names)):
     groups.append(
@@ -441,16 +440,18 @@ screens = [
             widgets=init_widgets_list(),
             size=28,
             background="#282c34ff",
-            margin=[6, 11, -4, 11],
+            # margin=[6, 11, -4, 11],
+            margin=0,
             opacity=1.0,
         )
     ),
     Screen(
         top=bar.Bar(
             widgets=init_widgets_list(),
-            size=22,
+            size=28,
             background="#282c34ff",
-            margin=[10, 11, -4, 11],
+            # margin=[10, 11, -4, 11],
+            margin=0,
             opacity=1.0
         )
     ),

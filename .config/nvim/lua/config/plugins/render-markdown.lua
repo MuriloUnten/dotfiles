@@ -70,7 +70,7 @@ return {
             },
             latex = {
                 -- Whether LaTeX should be rendered, mainly used for health check
-                enabled = true,
+                enabled = false,
                 -- Executable used to convert latex formula to rendered unicode
                 converter = 'latex2text',
                 -- Highlight for LaTeX blocks

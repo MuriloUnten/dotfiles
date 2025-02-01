@@ -54,6 +54,7 @@ return {
                 local gitsigns = require("gitsigns")
                 local opts = { desc = "Toggle line blame", buffer = bufnr }
                 vim.keymap.set({"n", "v"}, "<leader>gb", gitsigns.toggle_current_line_blame, opts)
+                vim.keymap.set({"n", "v"}, "<leader>gn", gitsigns.next_hunk, opts)
             end,
         })
     end,

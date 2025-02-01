@@ -12,6 +12,9 @@ alias wf="nmtui"
 alias vim=$EDITOR
 alias v="$EDITOR"
 alias ls="eza -a"
+alias exti="exit"
+alias xeit="exit"
+alias eixt="exit"
 
 # Git
 alias gs="git status"
