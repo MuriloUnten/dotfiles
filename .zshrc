@@ -74,6 +74,7 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 bindkey -v
+bindkey -M viins 'jk' vi-cmd-mode
 # End of lines configured by zsh-newuser-install
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
