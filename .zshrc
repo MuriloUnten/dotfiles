@@ -53,6 +53,9 @@ alias wave="devour gtkwave"
 # Work
 alias qr="devour zathura ~/work/qr.pdf"
 
+# esp idf
+alias get-idf=". $HOME/esp-idf/export.sh"
+
 #Tmux
 TMUX_CONFIG="~/.config/tmux/.tmux.conf"
 alias tn="tmux -u -f $TMUX_CONFIG new"
@@ -86,3 +89,5 @@ export QT_SELECT=5
 
 PATH="$HOME/.local/bin:$PATH"
 export npm_config_prefix="$HOME/.local"
+
+export QSYS_ROOTDIR="/home/murilo/.cache/yay/quartus-free/pkg/quartus-free-quartus/opt/intelFPGA/24.1/quartus/sopc_builder/bin"
