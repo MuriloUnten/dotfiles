@@ -11,13 +11,25 @@ configuration {
 @theme "/dev/null"
 
 * {
-  bg: #282c34cc;
-  bg-alt: #282c34cc;
-  bg-selected: #383c44;
+  // // Onedark
+  // bg: #282c34cc;
+  // bg-alt: #282c34cc;
+  // bg-selected: #383c44;
+  //
+  // fg: #abb2bf;
+  // fg-alt: #6b727f;
+  //
+  // border-clr: #61afef;
 
-  fg: #abb2bf;
-  fg-alt: #6b727f;
+  // Everforest
+  bg: #2d353bcc;
+  bg-alt: #2d353bcc;
+  bg-selected: #495156cc;
 
+  fg: #d3c6aa;
+  fg-alt: #859289;
+
+  border-clr: #a7c080;
   
   border: 0;
   margin: 0;
@@ -29,7 +41,7 @@ window {
   width: 30%;
   background-color: @bg;
   border: 1;
-  border-color: #61afef;
+  border-color: @border-clr;
 }
 
 element {

@@ -66,6 +66,46 @@ def replace_window_name(text):
         text = "Brave"
     return text
 
+
+def init_colors():
+    # # Gruvbox
+    # return [["#ebdbb2", "#ebdbb2"],  # color 0
+    #         ["#282828cc", "#282828cc"],  # color 1
+    #         ["#a89984", "#a89984"],  # color 2
+    #         ["#a3be8c", "#a3be8c"],  # color 3
+    #         ["#e2863f", "#e2863f"],  # color 4
+    #         ["#d26d3f", "#d26d3f"],  # color 5
+    #         ["#bf616a", "#bf616a"],  # color 6
+    #         ["#81a1c1", "#81a1c1"],  # color 7
+    #         ["#b48ead", "#b48ead"],  # color 8
+    #         ["#d08770", "#d08770"]]  # color 9
+
+    # # Onedark
+    # return [["#282c34cc", "#282c34cc"],  # 0 (background)
+    #         ["#abb2bf", "#abb2bf"],      # 1 (foreground)
+    #         ["#e06c75", "#e06c75"],      # 2 (red)
+    #         ["#98c379", "#98c379"],      # 3 (green)
+    #         ["#e5c07b", "#e5c07b"],      # 4 (yellow)
+    #         ["#61afef", "#61afef"],      # 5 (blue)
+    #         ["#c678dd", "#c678dd"],      # 6 (magenta)
+    #         ["#56b6c2", "#56b6c2"],      # 7 (cyan)
+    #         ["#383c44", "#383c44"]]      # 8 (background 2 - grey)
+
+    # Everforest
+    return [["#1e2326cc", "#1e2326cc"],  # 0 (background)
+            ["#d3c6aa", "#d3c6aa"],      # 1 (foreground)
+            ["#e67e80", "#e67e80"],      # 2 (red)
+            ["#a7c080", "#a7c080"],      # 3 (green)
+            ["#dbbc7f", "#dbbc7f"],      # 4 (yellow)
+            ["#7fbbb3", "#7fbbb3"],      # 5 (blue)
+            ["#d699b6", "#d699b6"],      # 6 (magenta)
+            ["#83c092", "#83c092"],      # 7 (cyan)
+            ["#272e33", "#272e33"]]      # 8 (background 2 - grey)
+
+
+colors = init_colors()
+
+
 keys = [
     Key([mod], "e", lazy.spawn(fileManager), desc="Open the file manager"),
     Key([mod], "b", lazy.spawn(browser), desc="launch browser"),
@@ -157,7 +197,7 @@ for i in groups:
 
 layouts = [
     layout.MonadTall(
-        border_focus=colors[5],
+        border_focus=colors[3],
         border_normal=colors[0],
         border_width=2,
         margin=5,
@@ -179,45 +219,6 @@ layouts = [
     # layout.VerticalTile(),
     # layout.Zoomy(),
 ]
-
-
-def init_colors():
-    # # Gruvbox
-    # return [["#ebdbb2", "#ebdbb2"],  # color 0
-    #         ["#282828cc", "#282828cc"],  # color 1
-    #         ["#a89984", "#a89984"],  # color 2
-    #         ["#a3be8c", "#a3be8c"],  # color 3
-    #         ["#e2863f", "#e2863f"],  # color 4
-    #         ["#d26d3f", "#d26d3f"],  # color 5
-    #         ["#bf616a", "#bf616a"],  # color 6
-    #         ["#81a1c1", "#81a1c1"],  # color 7
-    #         ["#b48ead", "#b48ead"],  # color 8
-    #         ["#d08770", "#d08770"]]  # color 9
-
-    # # Onedark
-    # return [["#282c34cc", "#282c34cc"],  # 0 (background)
-    #         ["#abb2bf", "#abb2bf"],      # 1 (foreground)
-    #         ["#e06c75", "#e06c75"],      # 2 (red)
-    #         ["#98c379", "#98c379"],      # 3 (green)
-    #         ["#e5c07b", "#e5c07b"],      # 4 (yellow)
-    #         ["#61afef", "#61afef"],      # 5 (blue)
-    #         ["#c678dd", "#c678dd"],      # 6 (magenta)
-    #         ["#56b6c2", "#56b6c2"],      # 7 (cyan)
-    #         ["#383c44", "#383c44"]]      # 8 (background 2 - grey)
-
-    # Everforest
-    return [["#1e2326cc", "#1e2326cc"],  # 0 (background)
-            ["#d3c6aa", "#d3c6aa"],      # 1 (foreground)
-            ["#e67e80", "#e67e80"],      # 2 (red)
-            ["#a7c080", "#a7c080"],      # 3 (green)
-            ["#dbbc7f", "#dbbc7f"],      # 4 (yellow)
-            ["#7fbbb3", "#7fbbb3"],      # 5 (blue)
-            ["#d699b6", "#d699b6"],      # 6 (magenta)
-            ["#83c092", "#83c092"],      # 7 (cyan)
-            ["#272e33", "#272e33"]]      # 8 (background 2 - grey)
-
-colors = init_colors()
-
 
 widget_defaults = dict(
     font=myFont,
@@ -482,7 +483,7 @@ bring_front_click = True
 cursor_warp = False
 floating_layout = layout.Floating(
     border_width=2,
-    border_focus=colors[5],
+    border_focus=colors[3],
     border_normal=colors[0],
     float_rules=[
         # Run the utility of `xprop` to see the wm class and name of an X client.
