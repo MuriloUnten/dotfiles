@@ -48,7 +48,7 @@ return {
             vim.keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", opts)
 
             opts.desc = "See available code actions"
-            vim.keymap.set({"n", "v"}, "<leader>ca", vim.lsp.buf.code_action, opts)
+            vim.keymap.set({"n", "v"}, "<leader>ga", vim.lsp.buf.code_action, opts)
 
             opts.desc = "Smart rename"
             vim.keymap.set({"n", "v"}, "<leader>rn", vim.lsp.buf.rename, opts)
@@ -153,7 +153,7 @@ return {
             handlers = handlers,
         })
 
-        lspconfig["hdl_checker"].setup({
+        lspconfig["vhdl_ls"].setup({
             capabilities = capabilities,
             on_attach = on_attach,
             handlers = handlers,

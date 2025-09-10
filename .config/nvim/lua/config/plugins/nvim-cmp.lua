@@ -54,7 +54,7 @@ return {
             }),
             window = {
                 completion = get_custom_border(),
-                documentation = get_custom_border(),
+                documentation = cmp.config.disable,
             },
         })
     end,

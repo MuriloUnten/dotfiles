@@ -15,13 +15,13 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = {
     {import = "config.plugins"},
     {import = "config.plugins.lsp"},
-    {import = "config.plugins.jupyter"},
     {import = "config.plugins.debugger"},
+    {import = "config.plugins.themes"},
 }
 
 local opts = {
     install = {
-        colorscheme = {"onedark"},
+        colorscheme = {"everforest"},
     },
     checker = {
         enabled = true,
