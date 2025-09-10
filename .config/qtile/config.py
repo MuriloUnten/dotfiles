@@ -157,10 +157,10 @@ for i in groups:
 
 layouts = [
     layout.MonadTall(
-        border_focus=["#61afef00"],
-        border_normal=["#282c3400"],
-        border_width=1,
-        margin=11,
+        border_focus=colors[5],
+        border_normal=colors[0],
+        border_width=2,
+        margin=5,
         new_client_position="bottom"
     ),
     # layout.Columns(
@@ -194,17 +194,27 @@ def init_colors():
     #         ["#b48ead", "#b48ead"],  # color 8
     #         ["#d08770", "#d08770"]]  # color 9
 
-    # Onedark
-    return [["#282c34cc", "#282c34cc"],  # 0 (background)
-            ["#abb2bf", "#abb2bf"],      # 1 (foreground)
-            ["#e06c75", "#e06c75"],      # 2 (red)
-            ["#98c379", "#98c379"],      # 3 (green)
-            ["#e5c07b", "#e5c07b"],      # 4 (yellow)
-            ["#61afef", "#61afef"],      # 5 (blue)
-            ["#c678dd", "#c678dd"],      # 6 (magenta)
-            ["#56b6c2", "#56b6c2"],      # 7 (cyan)
-            ["#383c44", "#383c44"]]      # 8 (background 2 - grey)
+    # # Onedark
+    # return [["#282c34cc", "#282c34cc"],  # 0 (background)
+    #         ["#abb2bf", "#abb2bf"],      # 1 (foreground)
+    #         ["#e06c75", "#e06c75"],      # 2 (red)
+    #         ["#98c379", "#98c379"],      # 3 (green)
+    #         ["#e5c07b", "#e5c07b"],      # 4 (yellow)
+    #         ["#61afef", "#61afef"],      # 5 (blue)
+    #         ["#c678dd", "#c678dd"],      # 6 (magenta)
+    #         ["#56b6c2", "#56b6c2"],      # 7 (cyan)
+    #         ["#383c44", "#383c44"]]      # 8 (background 2 - grey)
 
+    # Everforest
+    return [["#1e2326cc", "#1e2326cc"],  # 0 (background)
+            ["#d3c6aa", "#d3c6aa"],      # 1 (foreground)
+            ["#e67e80", "#e67e80"],      # 2 (red)
+            ["#a7c080", "#a7c080"],      # 3 (green)
+            ["#dbbc7f", "#dbbc7f"],      # 4 (yellow)
+            ["#7fbbb3", "#7fbbb3"],      # 5 (blue)
+            ["#d699b6", "#d699b6"],      # 6 (magenta)
+            ["#83c092", "#83c092"],      # 7 (cyan)
+            ["#272e33", "#272e33"]]      # 8 (background 2 - grey)
 
 colors = init_colors()
 
@@ -471,7 +481,7 @@ follow_mouse_focus = True
 bring_front_click = True
 cursor_warp = False
 floating_layout = layout.Floating(
-    border_width=1,
+    border_width=2,
     border_focus=colors[5],
     border_normal=colors[0],
     float_rules=[
