@@ -57,11 +57,9 @@ alias qr="devour zathura ~/work/qr.pdf"
 alias get-idf=". $HOME/esp-idf/export.sh"
 
 #Tmux
-TMUX_CONFIG="~/.config/tmux/.tmux.conf"
-alias tn="tmux -u -f $TMUX_CONFIG new"
-alias ta="tmux -u -f $TMUX_CONFIG attach"
-alias ctmux="$EDITOR $TMUX_CONFIG"
-alias work="~/.config/tmux/tmux-base"
+alias tn="tmux new"
+alias ta="tmux attach"
+alias ctmux="$EDITOR ~/.tmux.conf"
 
 # The following lines were added by compinstall
 zstyle ':completion:*' completer _complete _ignored
