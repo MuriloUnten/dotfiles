@@ -22,9 +22,9 @@ configuration {
   // border-clr: #61afef;
 
   // Everforest
-  bg: #2d353bcc;
-  bg-alt: #2d353bcc;
-  bg-selected: #495156cc;
+  bg: #1e2326aa;
+  bg-alt: #1e2326aa;
+  bg-selected: #2d353baa;
 
   fg: #d3c6aa;
   fg-alt: #859289;
@@ -40,8 +40,9 @@ configuration {
 window {
   width: 30%;
   background-color: @bg;
-  border: 1;
+  border: 2;
   border-color: @border-clr;
+  border-radius: 15;
 }
 
 element {
