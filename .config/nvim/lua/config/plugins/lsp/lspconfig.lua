@@ -158,6 +158,21 @@ return {
             on_attach = on_attach,
             handlers = handlers,
         })
+        lspconfig["ols"].setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+            handlers = handlers,
+            settings = {
+                ols = {
+                    enable_hover = true,
+                    enable_snippets = true,
+                    enable_document_symbols = true,
+                    enable_references = true,
+                    enable_completion_matching = true,
+                    enable_inlay_hints = true,
+                }
+            }
+        })
     end,
 
 }
